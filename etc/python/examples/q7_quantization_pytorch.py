@@ -30,8 +30,8 @@ X = np.array([[0., 0., 0.],
 Y = np.array([[1., 0.], 
               [0., 1.], 
               [0., 0.]])
-              
-              
+
+
 X_tensor = torch.FloatTensor(X)
 Y_tensor = torch.FloatTensor(Y)
 
@@ -41,7 +41,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
 
 epochs = 200
 model.train()
-for epoch in range(epochs):
+for _ in range(epochs):
     optimizer.zero_grad()
     pred = model(X_tensor)
     loss = criterion(pred, Y_tensor)

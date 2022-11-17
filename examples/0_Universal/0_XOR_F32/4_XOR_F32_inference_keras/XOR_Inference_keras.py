@@ -67,34 +67,34 @@ print("")
 #print the weights for AIfES
 #copy the weights in the "3_XOR_Inference_keras.ino" example
 print("float weights_data_dense_1[] = {")
-print(str(hidden_weights[0, 0]) + "f,")
-print(str(hidden_weights[0, 1]) + "f,")
-print(str(hidden_weights[0, 2]) + "f,")
-print(str(hidden_weights[1, 0]) + "f,")
-print(str(hidden_weights[1, 1]) + "f,")
-print(str(hidden_weights[1, 2]) + "f")
+print(f"{str(hidden_weights[0, 0])}f,")
+print(f"{str(hidden_weights[0, 1])}f,")
+print(f"{str(hidden_weights[0, 2])}f,")
+print(f"{str(hidden_weights[1, 0])}f,")
+print(f"{str(hidden_weights[1, 1])}f,")
+print(f"{str(hidden_weights[1, 2])}f")
 print("};")
 
 print("")
 
 print("float bias_data_dense_1[] = {")
-print(str(hidden_bias[0]) + "f,")
-print(str(hidden_bias[1]) + "f,")
-print(str(hidden_bias[2]) + "f")
+print(f"{str(hidden_bias[0])}f,")
+print(f"{str(hidden_bias[1])}f,")
+print(f"{str(hidden_bias[2])}f")
 print("};")
 
 print("")
 
 print("float weights_data_dense_2[] = {")
-print(str(output_weights[0, 0]) + "f,")
-print(str(output_weights[1, 0]) + "f,")
-print(str(output_weights[2, 0]) + "f")
+print(f"{str(output_weights[0, 0])}f,")
+print(f"{str(output_weights[1, 0])}f,")
+print(f"{str(output_weights[2, 0])}f")
 print("};")
 
 print("")
 
 print("float bias_data_dense_2[] = {")
-print(str(output_bias[0]) + "f")
+print(f"{str(output_bias[0])}f")
 print("};")
 
 

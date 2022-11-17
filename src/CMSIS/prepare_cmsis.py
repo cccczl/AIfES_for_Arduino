@@ -42,18 +42,21 @@ for file in files:
     with open(file, 'r') as f:
         text = f.read()
         includes = re.findall('#include ".*"', text)
-        
+
         for include in includes:
             include_basename = os.path.split(include.split('"')[1])[-1]
             if include_basename in file_dict:
-                print("Replace ", include_basename, "with CMSIS/" + file_dict[include_basename])
-                text = re.sub(include, '#include "CMSIS/{}"'.format(file_dict[include_basename]), text)
+                print(
+                    "Replace ",
+                    include_basename,
+                    f"with CMSIS/{file_dict[include_basename]}",
+                )
+
+                text = re.sub(include, f'#include "CMSIS/{file_dict[include_basename]}"', text)
             else:
                 print(file, include_basename, " not in CMSIS folder")
-                pass
-    
     text = "#include <aifes_config.h>\n#if defined AIFES_WITH_CMSIS && __arm__\n\n" + text + "\n\n#endif // AIFES_WITH_CMSIS\n"
     with open(file, 'w') as f:
         f.write(text)
-        
+
 shutil.rmtree("./CMSIS")
